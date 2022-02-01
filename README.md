@@ -1,6 +1,6 @@
 # Dead-reckoning Analysis in Controlled Environment for Marine Turtle Tracking
 
-This repository give all the data and code uses in the article 
+This repository give all the data and code used in the above article 
 
 The summury of repository folder is the following :
 
