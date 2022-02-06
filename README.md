@@ -19,6 +19,6 @@ Calculate, analyse and plot trajectories <br/>
   
 ### 3) Document 
 
-Article and data analyse complementary tables
+Article, data analyse tables and complementary graphics
   
-For more specific information about the different part folder refer to their own README.md
+
