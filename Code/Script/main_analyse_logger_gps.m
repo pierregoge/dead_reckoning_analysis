@@ -6,7 +6,7 @@ close all
 
 %% User variablable
 
-seq_var.seq_id = 3; % Swim sequence to analyse
+seq_var.seq_id =2; % Swim sequence to analyse
 seq_var.srate = [100 10];  % Sampling rate of the IMU for the swim sequence
 
 %Plot
@@ -14,7 +14,7 @@ seq_var.plot_data_logger = 0; % Openlogger data corrected with offset
 
 %% Librairies and speed model
 %Adding librairies, change to location with the download libraries
-path = ('C:\Users\Andrea\Documents\These\Seafile\Code\Matlab');
+path = ('D:\Seafile\These Pierre\Code\Matlab');
 
 addpath(genpath(strcat(path,'\Functions')));
 addpath(genpath(strcat(path,'\Scripts_analyse')));
@@ -33,11 +33,11 @@ load('speed_model_test_2.mat') %100Hz
 
 %% Compute orientation
 % 100Hz
-% [madgwick(:,3),madgwick(:,1),madgwick(:,2)] = compute_madgwick_filter_2(data_imu,seq_var.beta,seq_var.srate(1));
-% [saam(:,3),saam(:,1),saam(:,2)] = compute_trigo_orientation_2(data_imu);
+[madgwick(:,3),madgwick(:,1),madgwick(:,2)] = compute_madgwick_filter_2(data_imu,seq_var.beta,seq_var.srate(1));
+[saam(:,3),saam(:,1),saam(:,2)] = compute_saam_orientation(data_imu);
 % 10Hz
 [madgwick_10(:,3),madgwick_10(:,1),madgwick_10(:,2)] = compute_madgwick_filter_2(data_imu_10,seq_var.beta,seq_var.srate(2));
-[saam_10(:,3),saam_10(:,1),saam_10(:,2)] = compute_trigo_orientation_2(data_imu_10);
+[saam_10(:,3),saam_10(:,1),saam_10(:,2)] = compute_saam_orientation(data_imu_10);
 
 %Creation of timetables for heading
 % 100Hz
